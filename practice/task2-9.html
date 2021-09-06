@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <section>
+      <div class="w-50 mx-auto d-flex">
+        <input id="productFild" class="form-control" type="text" />
+        <input id="priceFild" class="form-control" type="text" />
+        <button class="btn btn-primary" onclick="addItem() ">Add</button>
+      </div>
+
+      <div class="w-50 mx-auto">
+        <h3>Products list :</h3>
+        <ul id="product-list">
+
+        </ul>
+        <button class="btn btn-primary" onclick="order() ">Order</button>
+      </div>
+     
+    </section>
+    <script src="task2-9.js"></script>
+  </body>
+</html>

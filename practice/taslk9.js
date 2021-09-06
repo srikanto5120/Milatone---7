@@ -12,6 +12,11 @@ const button = () => {
 
   const inputValue = document.getElementById("value");
   const valueText = inputValue.value;
+  if (!KeyText || !valueText) {
+    inputKey.value = "";
+    inputValue.value = "";
+    return;
+  }
   display(KeyText, valueText);
   addProductToCart(KeyText, valueText);
   inputKey.value = "";
@@ -25,8 +30,8 @@ const display = (key, value) => {
   const keyUi = document.createElement("span");
   const valueUi = document.createElement("span");
 
-  keyUi.innerText = key;
-  valueUi.innerText = value;
+  keyUi.innerText = ` =) ${key}`;
+  valueUi.innerText = ` =${value}`;
   div.appendChild(keyUi);
   div.appendChild(valueUi);
   container.appendChild(div);
@@ -46,5 +51,9 @@ const addProductToCart = (name, value) => {
   cart[name] = value;
   const cartStringFied = JSON.stringify(cart);
   localStorage.setItem("cart", cartStringFied);
+};
+const order = () => {
+  document.getElementById("item-container").textContent = "";
+  localStorage.removeItem("cart");
 };
 displayInUI();
